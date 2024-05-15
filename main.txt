@@ -1,0 +1,30 @@
+//First TABLE
+1 - CREATE TABLE Customer (
+    Customer_id VARCHAR(20) PRIMARY KEY,
+    Customer_Name VARCHAR(20) NOT NULL,
+    Customer_Tel VARCHAR(20)
+);
+- Insert to Customer Values (C01, ALI, 71321009), (C02, ASMA, 77345823);
+
+
+//Second TABLE
+2. CREATE TABLE Orders (
+    Customer_id VARCHAR(20),
+    Product_id VARCHAR(20),
+    OrderDate Date,
+    Quantity NUMBER,
+    Total_amount NUMBER,
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id),
+    FOREIGN KEY (Product_id) REFERENCES Product(Product_id)
+);
+- Insert into Orders Values (C01, P02, NULL, 2, 9198),(C02, P01, 28/05/2020, 1, 3299);
+
+
+//Third TABLE
+3- CREATE TABLE Product (
+    Product_id VARCHAR(20) PRIMARY KEY,
+    Product_Name VARCHAR(20) NOT NULL,
+    Category VARCHAR(20),
+    Price NUMBER
+);
+- Insert into Product Values (P01, Samsung Galaxy S20, Smartphone, 3299), (P02, ASUS Notebook, PC, 4599);
